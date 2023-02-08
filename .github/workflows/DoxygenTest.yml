@@ -22,9 +22,5 @@ jobs:
     - name: Doxygen Action
   # You may pin to the exact commit or the version.
   # uses: mattnotmitt/doxygen-action@411df0c62acb5b96b8a93d93a7bf4b753c47ea05
-      uses: Geometrie/doxygen-action@v3
-      with:
-    # Path to Doxyfile
-        doxyfile-path: ./Doxyfile
-    # Working directory
-        working-directory: .
+      uses: mattnotmitt/doxygen-action@v1.9.5
+      if: github.ref == ’refs/heads/doxygen’
