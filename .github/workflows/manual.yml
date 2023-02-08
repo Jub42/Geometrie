@@ -1,0 +1,30 @@
+# This is a basic workflow that is manually triggered
+
+name: Doxygen Test
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  greet:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Send greeting
+      run: echo "Hello ${{ github.event.inputs.name }}"
+    - name: Doxygen Action
+  # You may pin to the exact commit or the version.
+  # uses: mattnotmitt/doxygen-action@411df0c62acb5b96b8a93d93a7bf4b753c47ea05
+      uses: Geometrie/doxygen-action@v3
+      with:
+    # Path to Doxyfile
+        doxyfile-path: ./Doxyfile
+    # Working directory
+        working-directory: .
